@@ -5,6 +5,7 @@ COPY package*.json ./
 USER node
 RUN npm install
 COPY --chown=node:node . .
+ENV NODE_ENV=production
 EXPOSE 5000
 
 CMD [ "npm", "run","start_prod" ]
